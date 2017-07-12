@@ -10,27 +10,48 @@ int main(int argc, char const *argv[])
 	int sum3 = 0;
 	int sum5 = 0;
 	int sum15 = 0;
+	int i = 0;
 
+/*	less efficient, takes O(n) = O(1000)
 	for (int i = 1; i < 1000; ++i)
 	{
 		if (i % 3 == 0)
 		{
-			printf("multiple of 3 %d\n", i);
 			sum3 += i;
 		}
+
 		if (i % 5 == 0)
 		{
-			printf("multiple of 5 %d\n", i);
 			sum5 += i;
 		}
+
 		if (i % 15 == 0)
 		{
-			printf("multiple of 15 %d\n", i);
 			sum15 += i;
 		}
+	}*/
+
+	//more efficient solution O(logn) = O(log1000)
+	// in log base 3
+	while ((3 * i < 1000)) 
+	{
+		sum3 += 3 * i;
+
+		if (5 * i < 1000) 
+		{
+			sum5 += 5 * i;
+		}
+
+		if (15 * i < 1000)
+		{
+			sum15 += 15 * i;
+		}
+
+		i++;
 	}
 
 	printf("The sum is: %d\n", (sum3 + sum5 - sum15));
+	printf("Number of steps: %d\n", i);
 
 	return 0;
 }
