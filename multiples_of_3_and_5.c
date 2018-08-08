@@ -12,27 +12,6 @@ int main(int argc, char const *argv[])
 	int sum15 = 0;
 	int i = 0;
 
-/*	less efficient, takes O(n) = O(1000)
-	for (int i = 1; i < 1000; ++i)
-	{
-		if (i % 3 == 0)
-		{
-			sum3 += i;
-		}
-
-		if (i % 5 == 0)
-		{
-			sum5 += i;
-		}
-
-		if (i % 15 == 0)
-		{
-			sum15 += i;
-		}
-	}*/
-
-	//more efficient solution O(logn) = O(log1000)
-	// in log base 3
 	while ((3 * i < 1000)) 
 	{
 		sum3 += 3 * i;
